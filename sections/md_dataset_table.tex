@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Language vs.\ multiple-demand network per dataset: matched-scale regression (Equation~\ref{eq:group} without random
+effects) of the percentile rank of the raw $\Delta\ell$ among the 118 models (as in Table~\ref{tab:summary}), one row per model, lineage random intercept (REML, Satterthwaite $t$-tests). Coefficient (SE);
+reference: Standard LLM. $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\label{tab:md-datasets}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+ & \multicolumn{2}{c}{Pereira (fMRI)} & \multicolumn{2}{c}{Podcast (ECoG)} & \multicolumn{2}{c}{Tuckute (fMRI)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+ & Language & MD & Language & MD & Language & MD \\
+\midrule
+Memory constraint $\beta_M$ & $-.009$ (.047) & $-.003$ (.046) & $-.111^{*}$ (.045) & $-.130^{*}$ (.058) & $-.120$ (.077) & $-.084$ (.110) \\
+Data constraint $\beta_D$ & $-.100$ (.060) & $-.098$ (.059) & $-.163^{*}$ (.060) & $-.142$ (.076) & $+.027$ (.102) & $+.051$ (.149) \\
+Interaction $\beta_{MD}$ & $+.072$ (.066) & $+.071$ (.064) & $+.150^{*}$ (.064) & $+.115$ (.082) & $-.001$ (.111) & $+.105$ (.161) \\
+$\log_{10}$ parameters $\beta_S$ & $+.108^{***}$ (.023) & $+.111^{***}$ (.022) & $+.075^{***}$ (.021) & $+.184^{***}$ (.029) & $+.208^{***}$ (.031) & $-.055$ (.041) \\
+$\log_{10}$ perplexity $\beta_P$ & $-.175^{***}$ (.033) & $-.179^{***}$ (.032) & $-.160^{***}$ (.031) & $+.021$ (.042) & $+.035$ (.039) & $-.073$ (.054) \\
+C-BabyLM vs.\ LLM & $-.037$ (.052) & $-.029$ (.050) & $-.124^{*}$ (.050) & $-.158^{*}$ (.066) & $-.094$ (.087) & $+.072$ (.123) \\
+\bottomrule
+\end{tabular}}
+\end{table}

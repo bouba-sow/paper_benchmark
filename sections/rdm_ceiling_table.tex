@@ -1,0 +1,57 @@
+{\small\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}llrrrrrrr@{}}
+\caption{RDM-regression noise ceilings. $\Delta\ell$ reference: held-out $\Delta\ell$ per pair obtained when one half of the
+participants' RDM predicts the other half's beyond the word-length and frequency RDMs (15 random participant splits, both
+directions). RSA ceiling: square root of the Spearman--Brown corrected split-half RDM correlation. For the single-response neural
+datasets the values are medians over the units with a positive reference. The last four columns give the median and the
+maximum over the 118 models of the normalized similarity (model $\Delta\ell$ / reference) with each model predictor: the
+whole-network embedding RDM and the surprisal RDM. The headline scores use the embedding RDM for brain similarity and the
+surprisal RDM for behavioral similarity. Pereira is shown per passage set, each over its own reference; its benchmark score
+averages the two sets with pair weights. Nieuwland item means are centered within sentence frame. Values above 1 arise because
+the reference compares two half-sample RDMs, whereas models are scored against the full-sample RDM
+(Appendix~\ref{app:rsa-ceilings}).}\label{tab:rdm-ceilings} \\
+\toprule
+ & & & & & \multicolumn{2}{c}{Embedding} & \multicolumn{2}{c}{Surprisal} \\
+\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+Dataset / measure & RDM & Items & $\Delta\ell$ ref. & RSA ceil. & Median & Max & Median & Max \\
+\midrule
+\endfirsthead
+\multicolumn{9}{c}{\tablename\ \thetable{} -- continued} \\
+\toprule
+ & & & & & \multicolumn{2}{c}{Embedding} & \multicolumn{2}{c}{Surprisal} \\
+\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+Dataset / measure & RDM & Items & $\Delta\ell$ ref. & RSA ceil. & Median & Max & Median & Max \\
+\midrule
+\endhead
+\midrule\multicolumn{9}{r}{Continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+Podcast ECoG & lang. network & 5134 & $5.01\times10^{-3}$ & 0.427 & 1.00 & 2.06 & 0.020 & 0.049 \\
+MEG-MASC & all channels & 7678 & $8.31\times10^{-5}$ & 0.160 & 0.91 & 2.12 & 0.042 & 0.24 \\
+Broderick EEG & all channels & 11379 & $1.78\times10^{-5}$ & 0.109 & 0.49 & 1.50 & 0.010 & 0.11 \\
+Pereira fMRI (243 sent.) & lang. network & 243 & $1.58\times10^{-3}$ & 0.334 & 3.99 & 5.31 & -0.016 & 0.013 \\
+Pereira fMRI (384 sent.) & lang. network & 384 & $8.96\times10^{-4}$ & 0.291 & 6.16 & 11.34 & -0.001 & 0.054 \\
+Tuckute fMRI & 9/13 units & -- & $1.45\times10^{-3}$ & 0.340 & 0.012 & 0.13 & -0.14 & 0.15 \\
+Nieuwland N400 & 1/1 units & -- & $8.41\times10^{-2}$ & 0.752 & -0.001 & 0.004 & -0.002 & 0.28 \\
+Federmeier 2007 N400 & 1/1 units & -- & $1.95\times10^{-3}$ & 0.363 & 0.10 & 0.90 & 7.08 & 12.13 \\
+Hubbard 2019 N400 & 1/1 units & -- & $9.01\times10^{-3}$ & 0.517 & 0.003 & 0.29 & 1.07 & 4.04 \\
+\midrule
+Provo / FP & item means & -- & $1.69\times10^{-1}$ & 0.863 & 0.001 & 0.007 & 0.061 & 0.17 \\
+Provo / GP & item means & -- & $7.36\times10^{-2}$ & 0.735 & 0.001 & 0.005 & 0.027 & 0.090 \\
+Provo / SP & item means & -- & $2.13\times10^{-1}$ & 0.884 & 0.001 & 0.006 & 0.11 & 0.17 \\
+MECO / FP & item means & -- & $1.42\times10^{-1}$ & 0.842 & 0.001 & 0.018 & 0.11 & 0.25 \\
+MECO / GP & item means & -- & $7.13\times10^{-3}$ & 0.487 & -0.001 & 0.000 & -0.022 & 0.060 \\
+MECO / SP & item means & -- & $2.67\times10^{-1}$ & 0.899 & 0.000 & 0.011 & 0.095 & 0.20 \\
+GECO / FP & item means & -- & $3.82\times10^{-3}$ & 0.420 & 0.006 & 0.061 & 0.17 & 0.41 \\
+GECO / GP & item means & -- & $9.80\times10^{-4}$ & 0.296 & 0.000 & 0.076 & 0.008 & 0.16 \\
+OneStop / FP & item means & -- & $1.29\times10^{-2}$ & 0.566 & 0.014 & 0.070 & 0.63 & 1.02 \\
+OneStop / GP & item means & -- & $1.24\times10^{-2}$ & 0.526 & 0.000 & 0.012 & 0.030 & 0.11 \\
+OneStop / SP & item means & -- & $3.19\times10^{-2}$ & 0.666 & 0.004 & 0.039 & 0.42 & 0.65 \\
+Natural Stories / SPR & item means & -- & $2.33\times10^{-1}$ & 0.873 & 0.000 & 0.004 & 0.026 & 0.064 \\
+UCL / SPR & item means & -- & $1.02\times10^{-2}$ & 0.505 & -0.000 & 0.011 & 0.12 & 0.27 \\
+ZuCo / NR & item means & -- & $7.15\times10^{-2}$ & 0.766 & 0.006 & 0.061 & 0.42 & 0.61 \\
+ZuCo / SR & item means & -- & $9.08\times10^{-2}$ & 0.799 & 0.003 & 0.033 & 0.37 & 0.45 \\
+ZuCo / TSR & item means & -- & $1.39\times10^{-2}$ & 0.555 & 0.002 & 0.032 & 0.59 & 0.74 \\
+\end{longtable}
+}

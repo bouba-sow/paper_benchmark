@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Matched-scale regression with the same model quantity on both axes. Left: behavioral similarity from the
+whole-network embedding RDM (coefficients $\times 10^3$). Right: brain similarity from the $|\Delta$surprisal$|$ RDM. The other
+axis is unchanged (Table~\ref{tab:summary}, all datasets). Random intercepts for the dataset unit and the model lineage
+(REML, Satterthwaite $t$-tests). Coefficient (SE); reference: Standard LLM. $^{*}p<.05$,
+$^{**}p<.01$, $^{***}p<.001$.}
+\label{tab:rsa-sameq}
+\begin{tabular}{lcc}
+\toprule
+ & Behavior, embedding RDM & Brain, surprisal RDM \\
+\midrule
+Memory constraint $\beta_M$ & $-0.02$ (0.92) & $-.321^{*}$ (.151) \\
+Data constraint $\beta_D$ & $+3.07$ (1.49) & $-.522^{**}$ (.191) \\
+Interaction $\beta_{MD}$ & $-3.19^{*}$ (1.54) & $+.278$ (.229) \\
+$\log_{10}$ parameters $\beta_S$ & $+0.48$ (0.27) & $+.439^{***}$ (.095) \\
+$\log_{10}$ perplexity $\beta_P$ & $+1.23^{***}$ (0.29) & $+.024$ (.105) \\
+\bottomrule
+\end{tabular}
+\end{table}

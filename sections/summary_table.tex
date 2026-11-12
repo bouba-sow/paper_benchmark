@@ -1,0 +1,43 @@
+\begin{table}[t]
+\centering
+\caption{Matched-scale regressions (Equation~\ref{eq:group}) behind all claims of Section~\ref{sec:results}. Each row is
+one fit (or, for $\Delta$ rows, the interaction of every fixed effect with the bin or network in a pooled fit). Outcomes: score
+divided by the split-half reference (all datasets; word-pair bins, both bins by the all-pairs reference); percentile rank of the raw score among the 118 models within each dataset and network (language vs.\ MD,
+whose references are too small to divide by). Fits: all datasets, dataset-unit and lineage random intercepts (REML,
+Satterthwaite $t$-tests); word-pair bins, one fit over both bins with measure-by-bin, lineage and lineage-by-bin random
+intercepts; networks, dataset fixed effects and a lineage random intercept (all REML, Satterthwaite $t$-tests). All datasets with a
+robust-$z$ outcome: Table~\ref{tab:summary-z}. Coefficient (SE); reference: Standard LLM of the same size and perplexity. $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\label{tab:summary}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+ & Memory $\beta_M$ & Data $\beta_D$ & $M\times D$ $\beta_{MD}$ & $\log_{10}$ params $\beta_S$ & $\log_{10}$ PPL $\beta_P$ & C-BabyLM vs.\ LLM \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{All datasets \quad (16 reading measures; 8 neural datasets)}} \\
+\quad Behavior & $+.028^{**}$ (.011) & $+.030^{*}$ (.014) & $-.031^{*}$ (.015) & $-.033^{***}$ (.004) & $-.027^{***}$ (.004) & $+.027^{*}$ (.011) \\
+\quad Brain & $-.189^{*}$ (.092) & $-.261^{*}$ (.116) & $+.141$ (.136) & $+.201^{***}$ (.054) & $-.183^{**}$ (.061) & $-.309^{**}$ (.111) \\
+\addlinespace
+\multicolumn{7}{@{}l}{\textit{Syntactic memory load \quad (Natural Stories; Podcast)}} \\
+\quad Behavior, easy--easy & $+.006$ (.006) & $+.008$ (.008) & $-.011$ (.008) & $-.004$ (.002) & $+.000$ (.002) & $+.003$ (.006) \\
+\quad Behavior, any-hard & $+.018^{**}$ (.006) & $+.027^{**}$ (.008) & $-.032^{***}$ (.008) & $-.028^{***}$ (.002) & $-.006^{*}$ (.002) & $+.013^{*}$ (.006) \\
+\quad Behavior, $\Delta$ hard $-$ easy & $+.012$ (.007) & $+.018$ (.009) & $-.021^{*}$ (.010) & $-.023^{***}$ (.003) & $-.006$ (.003) & $+.010$ (.008) \\
+\quad Brain, easy--easy & $-.190^{*}$ (.075) & $-.335^{**}$ (.107) & $+.360^{**}$ (.114) & $+.195^{***}$ (.035) & $-.259^{***}$ (.050) & $-.164$ (.085) \\
+\quad Brain, any-hard & $-.097$ (.075) & $-.250^{*}$ (.107) & $+.224$ (.114) & $+.146^{***}$ (.035) & $-.291^{***}$ (.050) & $-.123$ (.085) \\
+\quad Brain, $\Delta$ hard $-$ easy & $+.092$ (.063) & $+.085$ (.080) & $-.136$ (.094) & $-.049$ (.044) & $-.032$ (.055) & $+.041$ (.082) \\
+\addlinespace
+\multicolumn{7}{@{}l}{\textit{Word frequency \quad (9 reading measures; Podcast)}} \\
+\quad Behavior, frequent--frequent & $+.055$ (.081) & $+.032$ (.105) & $-.042$ (.117) & $-.016$ (.034) & $-.038$ (.028) & $+.046$ (.089) \\
+\quad Behavior, any-rare & $+.348^{***}$ (.081) & $+.338^{**}$ (.105) & $-.313^{*}$ (.117) & $-.545^{***}$ (.034) & $-.285^{***}$ (.028) & $+.373^{***}$ (.089) \\
+\quad Behavior, $\Delta$ rare $-$ frequent & $+.293^{**}$ (.104) & $+.306^{*}$ (.132) & $-.271$ (.150) & $-.529^{***}$ (.047) & $-.246^{***}$ (.037) & $+.327^{**}$ (.115) \\
+\quad Brain, frequent--frequent & $-.126$ (.102) & $-.302^{*}$ (.146) & $+.299$ (.153) & $+.181^{***}$ (.046) & $-.309^{***}$ (.067) & $-.129$ (.113) \\
+\quad Brain, any-rare & $-.220^{*}$ (.102) & $-.451^{**}$ (.146) & $+.464^{**}$ (.153) & $+.085$ (.046) & $-.426^{***}$ (.067) & $-.208$ (.113) \\
+\quad Brain, $\Delta$ rare $-$ frequent & $-.095$ (.108) & $-.149$ (.138) & $+.165$ (.153) & $-.096$ (.062) & $-.118$ (.084) & $-.079$ (.127) \\
+\addlinespace
+\multicolumn{7}{@{}l}{\textit{Language vs.\ multiple-demand network \quad (Pereira, Podcast, Tuckute)}} \\
+\quad Brain, language & $-.100^{*}$ (.043) & $-.101$ (.058) & $+.093$ (.063) & $+.155^{***}$ (.018) & $-.052^{*}$ (.024) & $-.107^{*}$ (.048) \\
+\quad Brain, MD & $-.035$ (.050) & $-.053$ (.063) & $+.065$ (.072) & $+.100^{***}$ (.027) & $-.062$ (.034) & $-.024$ (.060) \\
+\quad Brain, $\Delta$ MD $-$ language & $+.086$ (.048) & $+.024$ (.061) & $-.017$ (.073) & $-.043$ (.031) & $+.002$ (.036) & $+.093$ (.061) \\
+\bottomrule
+\end{tabular}}
+\end{table}

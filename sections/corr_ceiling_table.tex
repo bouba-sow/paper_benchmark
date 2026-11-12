@@ -1,0 +1,45 @@
+{\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}lrlrrr@{}}
+\caption{Correlation references used to normalize the final-layer embedding scores. Maximum is the largest normalized score among models with a finite result, not a selected layer. Pearson and Rank indicate Pearson- and Spearman-based split-half references; ISC denotes the precomputed intersubject-correlation conversion. Above counts normalized scores greater than one. Rank references are reliability normalizers, not exact Pearson ceilings. See Appendix~\ref{app:corr-ceiling} for aggregation and target-matching qualifications.}\label{tab:corr-ceilings} \\
+\toprule
+Dataset / measure & Reference & Type & $N$ & Maximum & Above \\
+\midrule
+\endfirsthead
+\multicolumn{6}{c}{\tablename\ \thetable{} -- continued} \\
+\toprule
+Dataset / measure & Reference & Type & $N$ & Maximum & Above \\
+\midrule
+\endhead
+\midrule\multicolumn{6}{r}{Continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+GECO FP & 0.627 & Pearson & 118 & 0.570 & 0/118 \\
+GECO GP & 0.529 & Pearson & 118 & 0.362 & 0/118 \\
+MECO FP & 0.899 & Pearson & 118 & 0.651 & 0/118 \\
+MECO GP & 0.684 & Pearson & 118 & 0.304 & 0/118 \\
+MECO SP & 0.930 & Pearson & 118 & 0.717 & 0/118 \\
+Natural Stories SPR & 0.914 & Pearson & 118 & 0.480 & 0/118 \\
+OneStop FP & 0.829 & Pearson & 118 & 0.454 & 0/118 \\
+OneStop GP & 0.776 & Pearson & 118 & 0.303 & 0/118 \\
+OneStop SP & 0.888 & Pearson & 118 & 0.545 & 0/118 \\
+Provo FP & 0.933 & Pearson & 118 & 0.599 & 0/118 \\
+Provo GP & 0.919 & Pearson & 118 & 0.356 & 0/118 \\
+Provo SP & 0.943 & Pearson & 118 & 0.590 & 0/118 \\
+UCL SPR & 0.689 & Pearson & 118 & 0.457 & 0/118 \\
+ZuCo NR & 0.827 & Pearson & 118 & 0.724 & 0/118 \\
+ZuCo SR & 0.858 & Pearson & 118 & 0.750 & 0/118 \\
+ZuCo TSR & 0.696 & Pearson & 118 & 0.616 & 0/118 \\
+Le Petit Prince fMRI & 0.981 & ISC & 118 & 0.415 & 0/118 \\
+Natural Stories fMRI & 0.628 & Pearson & 118 & 0.655 & 0/118 \\
+Pereira fMRI & 0.507 & Pearson & 118 & 0.626 & 0/118 \\
+Tuckute fMRI & 0.480 & Pearson & 118 & 0.299 & 0/118 \\
+Fedorenko intracranial & 0.711 & Rank & 118 & 0.881 & 0/118 \\
+Broderick EEG & 0.108 & Pearson & 118 & 0.085 & 0/118 \\
+MEG-MASC & 0.097 & Pearson & 118 & 0.128 & 0/118 \\
+Nieuwland N400 & 0.887 & Rank & 118 & 0.400 & 0/118 \\
+Federmeier 2007 N400 & 0.693 & Rank & 118 & 0.744 & 0/118 \\
+Hubbard 2019 N400 & 0.708 & Rank & 118 & 0.724 & 0/118 \\
+Podcast ECoG & 0.398 & Pearson & 118 & 0.590 & 0/118 \\
+\end{longtable}
+}

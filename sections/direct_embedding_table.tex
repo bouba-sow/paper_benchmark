@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Matched-scale regression on the direct embedding scores (ridge encoding / decoding, Pearson $r$ divided by the correlation ceiling), fitted separately per domain with a dataset random intercept (REML, Wald tests); 118 models, 1,870 behavioral and 1,290 neural rows.}
+\label{tab:direct-embedding}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{BehavScore} & \multicolumn{2}{c}{BrainScore} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & Last layer & Best layer & Last layer & Best layer \\
+\midrule
+Memory constraint $\beta_M$ & $+0.015^{***}$ (0.003) & $-0.023^{***}$ (0.002) & $-0.023^{**}$ (0.008) & $-0.055^{***}$ (0.007) \\
+Data constraint $\beta_D$ & $+0.033^{***}$ (0.003) & $-0.002$ (0.003) & $-0.001$ (0.010) & $-0.030^{***}$ (0.009) \\
+Interaction $\beta_{MD}$ & $-0.041^{***}$ (0.004) & $-0.024^{***}$ (0.004) & $-0.005$ (0.012) & $+0.018$ (0.011) \\
+$\log_{10}$ parameters $\beta_S$ & $+0.012^{***}$ (0.001) & $+0.018^{***}$ (0.001) & $+0.048^{***}$ (0.004) & $+0.053^{***}$ (0.004) \\
+$\log_{10}$ perplexity $\beta_P$ & $-0.005^{***}$ (0.001) & $-0.014^{***}$ (0.001) & $-0.005$ (0.004) & $-0.016^{***}$ (0.004) \\
+\bottomrule
+\end{tabular}}
+\par\smallskip{\footnotesize Coefficient (SE); reference = Standard LLM. $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\end{table}

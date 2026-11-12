@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\caption{Matched-scale regression of behavioral and brain similarity on the constraint factors, parameter count and
+perplexity (Equation~\ref{eq:group}). Two datasets: Natural Stories (118 models) and Podcast (116 models), OLS with
+family-clustered standard errors. All datasets: 16 behavioral measures and eight neural datasets, random intercepts for the
+dataset unit and the model lineage (REML, Satterthwaite $t$-tests). Coefficient (SE); reference: Standard LLM. $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\label{tab:rsa-main}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Two datasets} & \multicolumn{2}{c}{All datasets} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & Behavior & Brain & Behavior & Brain \\
+\midrule
+Memory constraint $\beta_M$ & $+.006$ (.004) & $-.300^{***}$ (.058) & $+.028^{**}$ (.011) & $-.189^{*}$ (.092) \\
+Data constraint $\beta_D$ & $+.014^{***}$ (.002) & $-.315^{***}$ (.050) & $+.030^{*}$ (.014) & $-.261^{*}$ (.116) \\
+Interaction $\beta_{MD}$ & $-.010^{***}$ (.002) & $+.316^{***}$ (.062) & $-.031^{*}$ (.015) & $+.141$ (.136) \\
+$\log_{10}$ parameters $\beta_S$ & $-.013^{***}$ (.002) & $+.211^{**}$ (.078) & $-.033^{***}$ (.004) & $+.201^{***}$ (.054) \\
+$\log_{10}$ perplexity $\beta_P$ & $-.008^{**}$ (.002) & $-.249^{**}$ (.079) & $-.027^{***}$ (.004) & $-.183^{**}$ (.061) \\
+\bottomrule
+\end{tabular}
+\end{table}

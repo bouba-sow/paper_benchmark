@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\caption{Matched-scale regression with the training checkpoints of Pythia (ten sizes, steps 128--128{,}000) and of the BabyLM
+GPT-2 baseline (29 checkpoints, 1M--1B words) added to the original models. Behavior: surprisal RDM, 16 reading measures; brain:
+whole-network embedding RDM, the eight neural datasets. Perplexity is computed the same way for checkpoints and original models
+(Appendix~\ref{app:checkpoints}); the \emph{Original} columns equal the all-datasets rows of Table~\ref{tab:summary}. Random intercepts for the dataset unit, the model lineage and the
+model within its lineage (a training run's checkpoints share one model intercept); REML, Satterthwaite $t$-tests.
+Coefficient (SE); reference: Standard LLM. $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\label{tab:rsa-ckpt}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Behavior} & \multicolumn{2}{c}{Brain} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & Original & + checkpoints & Original & + checkpoints \\
+\midrule
+Memory constraint $\beta_M$ & $+.028^{**}$ (.011) & $+.029^{**}$ (.011) & $-.189^{*}$ (.092) & $-.089$ (.094) \\
+Data constraint $\beta_D$ & $+.030^{*}$ (.014) & $+.036^{*}$ (.015) & $-.261^{*}$ (.116) & $-.220$ (.109) \\
+Interaction $\beta_{MD}$ & $-.031^{*}$ (.015) & $-.037^{*}$ (.016) & $+.141$ (.136) & $+.159$ (.138) \\
+$\log_{10}$ parameters $\beta_S$ & $-.033^{***}$ (.004) & $-.020^{***}$ (.002) & $+.201^{***}$ (.054) & $+.093^{**}$ (.028) \\
+$\log_{10}$ perplexity $\beta_P$ & $-.027^{***}$ (.004) & $-.021^{***}$ (.002) & $-.183^{**}$ (.061) & $-.355^{***}$ (.027) \\
+\midrule
+Checkpoints added & 0 & 119 & 0 & 119 \\
+Rows (of which checkpoints) & 1,870 (0) & 3,774 (1,904) & 934 (0) & 1,886 (952) \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Matched-scale regression on frequent and rare word pairs. Frequent--frequent: both words of Zipf frequency $\geq 4$;
+any-rare: at least one word of Zipf frequency $\leq 3$ \citep{vanheuven2014subtlex}. Outcome: similarity score divided by the
+measure's all-pairs split-half ceiling in both bins. The last column is the bin interaction (any-rare $-$
+frequent--frequent). One fit over both bins per modality, with lineage and lineage-by-bin random intercepts, plus a
+measure-by-bin random intercept for the 9 reading measures (REML, Satterthwaite $t$-tests).}
+\label{tab:rsa-freq}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+ & Frequent--frequent & Any-rare & Any-rare $-$ frequent--frequent \\
+\midrule
+\multicolumn{4}{@{}l}{\itshape Behavioral similarity (9 reading measures)} \\
+\quad Memory constraint $\beta_M$ & $+0.055$ (0.081) & $+0.348^{***}$ (0.081) & $+0.293^{**}$ (0.104) \\
+\quad Data constraint $\beta_D$ & $+0.032$ (0.105) & $+0.338^{**}$ (0.105) & $+0.306^{*}$ (0.132) \\
+\quad Interaction $\beta_{MD}$ & $-0.042$ (0.117) & $-0.313^{*}$ (0.117) & $-0.271$ (0.150) \\
+\quad $\log_{10}$ parameters $\beta_S$ & $-0.016$ (0.034) & $-0.545^{***}$ (0.034) & $-0.529^{***}$ (0.047) \\
+\quad $\log_{10}$ perplexity $\beta_P$ & $-0.038$ (0.028) & $-0.285^{***}$ (0.028) & $-0.246^{***}$ (0.037) \\
+\addlinespace
+\multicolumn{4}{@{}l}{\itshape Brain similarity (Podcast)} \\
+\quad Memory constraint $\beta_M$ & $-0.126$ (0.102) & $-0.220^{*}$ (0.102) & $-0.095$ (0.108) \\
+\quad Data constraint $\beta_D$ & $-0.302^{*}$ (0.146) & $-0.451^{**}$ (0.146) & $-0.149$ (0.138) \\
+\quad Interaction $\beta_{MD}$ & $+0.299$ (0.153) & $+0.464^{**}$ (0.153) & $+0.165$ (0.153) \\
+\quad $\log_{10}$ parameters $\beta_S$ & $+0.181^{***}$ (0.046) & $+0.085$ (0.046) & $-0.096$ (0.062) \\
+\quad $\log_{10}$ perplexity $\beta_P$ & $-0.309^{***}$ (0.067) & $-0.426^{***}$ (0.067) & $-0.118$ (0.084) \\
+\bottomrule
+\end{tabular}}
+\par\smallskip{\footnotesize Coefficient (SE). $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\end{table}

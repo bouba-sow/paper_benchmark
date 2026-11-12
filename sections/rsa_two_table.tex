@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Two-dataset matched-scale regression: Natural Stories self-paced reading (118 models) and Podcast ECoG, language
+network (116 models); one row per model, OLS with family-clustered standard errors. Outcome: score divided by the split-half
+reference. Coefficient (SE); reference: Standard LLM. $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\label{tab:rsa-two}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcc}
+\toprule
+ & Behavior & Brain \\
+\midrule
+Memory constraint $\beta_M$ & $+.006$ (.004) & $-.300^{***}$ (.058) \\
+Data constraint $\beta_D$ & $+.014^{***}$ (.002) & $-.315^{***}$ (.050) \\
+Interaction $\beta_{MD}$ & $-.010^{***}$ (.002) & $+.316^{***}$ (.062) \\
+$\log_{10}$ parameters $\beta_S$ & $-.013^{***}$ (.002) & $+.211^{**}$ (.078) \\
+$\log_{10}$ perplexity $\beta_P$ & $-.008^{**}$ (.002) & $-.249^{**}$ (.079) \\
+\bottomrule
+\end{tabular}}
+\end{table}

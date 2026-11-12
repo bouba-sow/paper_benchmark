@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Matched-scale regression on the direct surprisal scores (pooled LME, held-out $\Delta$log-likelihood divided by the $\Delta$log-likelihood ceiling; best layer chosen on the training $\Delta$log-likelihood), fitted separately per domain with a dataset random intercept (REML, Wald tests); 118 models, 1,870 behavioral and 818 neural rows (Broderick, Federmeier 2007, Hubbard 2019 and Pereira are left out because their $\Delta$log-likelihood references are unusable).}
+\label{tab:direct-surprisal}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{BehavScore} & \multicolumn{2}{c}{BrainScore} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & Last layer & Best layer & Last layer & Best layer \\
+\midrule
+Memory constraint $\beta_M$ & $+0.004$ (0.005) & $+0.007$ (0.006) & $-0.008$ (0.015) & $+0.010$ (0.017) \\
+Data constraint $\beta_D$ & $+0.032^{***}$ (0.007) & $+0.034^{***}$ (0.007) & $-0.026$ (0.019) & $-0.014$ (0.021) \\
+Interaction $\beta_{MD}$ & $-0.039^{***}$ (0.008) & $-0.036^{***}$ (0.009) & $+0.038$ (0.022) & $+0.017$ (0.025) \\
+$\log_{10}$ parameters $\beta_S$ & $-0.022^{***}$ (0.003) & $-0.011^{**}$ (0.003) & $+0.029^{***}$ (0.009) & $+0.035^{***}$ (0.010) \\
+$\log_{10}$ perplexity $\beta_P$ & $-0.035^{***}$ (0.003) & $-0.035^{***}$ (0.003) & $-0.015$ (0.007) & $-0.007$ (0.009) \\
+\bottomrule
+\end{tabular}}
+\par\smallskip{\footnotesize Coefficient (SE); reference = Standard LLM. $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\end{table}

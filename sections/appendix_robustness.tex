@@ -1,0 +1,33 @@
+\section{Robustness Without the Noise Reference}
+\label{app:robust-z}
+
+\input{sections/summary_z_table}
+
+The split-half reference rescales each dataset unit by a constant. It sets the weight of a unit in the medians and the scale of the coefficients, but it is not an upper bound for multichannel datasets (Appendix~\ref{app:rsa-ceilings}). Table~\ref{tab:summary-z} repeats the all-datasets fits of Table~\ref{tab:summary} with an outcome that uses no reference: the robust $z$ score of the raw $\Delta\ell$ over models, computed within each dataset unit. Coefficients are then in standard deviations of model scores.
+
+The behavioral advantage of both constraints remains (memory $+.29$, data $+.48$, Constrained-BabyLM $+.29$, all $p<.05$, negative interaction), and so does the size dissociation. On the brain side, the memory constraint is associated with lower similarity ($-.46$, $p=.041$), the data constraint is not reliable, and the Constrained-BabyLM contrast is borderline ($-.48$, $p=.052$). No constraint is associated with higher brain similarity under either outcome.
+
+\section{Natural Stories and Podcast Alone}
+\label{app:two-datasets}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.62\linewidth]{figures/rsa_ns_podcast_pareto.pdf}
+\caption{Brain similarity (Podcast ECoG, language network) against behavioral similarity (Natural Stories self-paced reading) for 118 models, each divided by the split-half reference of its dataset. Layout as in Figure~\ref{fig:method}B.}
+\label{fig:ns-podcast}
+\end{figure}
+
+\input{sections/rsa_two_table}
+
+Natural Stories and Podcast are the two naturalistic datasets with every word pair in the RDM (about 10,200 and 5,100 words), and the two used for the syntactic-load bins. On these two alone (Figure~\ref{fig:ns-podcast}), the front runs from Forgetting-Pile-4L, a four-layer forgetting-attention model, through Forgetting-BabyLM100M-4L and three GPT-BERT BabyLM models, to Standard LLMs (GPT-2-medium, RWKV-4, Pythia-1B, Qwen3-4B, Ministral-3-3B and 8B). At matched scale (Table~\ref{tab:rsa-two}), the data constraint is associated with higher behavioral similarity ($+.014$, $p<.001$), the memory constraint is positive but not reliable, and both constraints are associated with lower brain similarity (about $-.30$ each, $p<.001$).
+
+\section{Multiple-Demand Network}
+\label{app:md}
+
+\paragraph{Units.} \emph{Pereira}: voxels of the MD atlas released with the dataset \citep{pereira2018toward}, concatenated over the participants of each passage set, as for the language atlas. \emph{Podcast}: all electrodes were re-extracted; an electrode is assigned to the MD network if it is word-responsive, not in one of the five language regions, and within 10\,mm of a voxel with probability $\geq.1$ in a probabilistic MD map from an MD localizer in 691 participants, distributed with the atlases of \citet{lipkin2022probabilistic}. \emph{Tuckute}: the mean response of the functionally localized MD regions of both hemispheres, against the mean of the left-hemisphere language regions; both are group-level item means. All other choices (model RDM, confounds, folds) are those of the main analysis.
+
+\paragraph{Why ranks.} MD split-half references are 3--15 times smaller than the language references (Pereira: $\Delta\ell$ $.00048$ and $.00053$ for the two passage sets, about a third of the language reference) and noisy, so normalized MD scores reach 5 to 60 times the reference. The outcome of Table~\ref{tab:summary} is therefore the percentile rank of each model's raw $\Delta\ell$ within each dataset and network, which uses no reference and gives each dataset the same weight.
+
+\input{sections/md_dataset_table}
+
+\paragraph{Per dataset.} Table~\ref{tab:md-datasets} fits each dataset separately. In Pereira and Podcast, where models do predict the MD RDM, the constraint coefficients are nearly the same on the two networks (Pereira data $-.100$ and $-.098$, both $p=.10$; Podcast memory $-.111$ and $-.130$, data $-.163$ and $-.142$, Constrained-BabyLM $-.124$ and $-.158$). In Tuckute, where no model predicts the MD response above the length-and-frequency baseline, no coefficient is reliable on either network, and the Constrained-BabyLM contrast is positive on the MD network ($+.072$, $p=.56$). The smaller penalty on the MD network in the pooled fit of Table~\ref{tab:summary} therefore reflects Tuckute's noise-level MD scores rather than a better match of constrained models to the MD network.

@@ -1,0 +1,27 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\caption{Two-dataset matched-scale regression (Natural Stories self-paced reading, Podcast ECoG language network) with the same
+training checkpoints added to the original models. One row per model or checkpoint. Random intercepts for the model lineage and, with the
+checkpoints, for the model within its lineage; REML, Satterthwaite $t$-tests. The \emph{Original} columns therefore differ from the
+fits of Table~\ref{tab:rsa-two}, which are OLS with family-clustered standard errors.
+Coefficient (SE); reference: Standard LLM. $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\label{tab:rsa-ckpt-two}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Behavior} & \multicolumn{2}{c}{Brain} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & Original & + checkpoints & Original & + checkpoints \\
+\midrule
+Memory constraint $\beta_M$ & $+.005$ (.003) & $+.003$ (.003) & $-.222^{*}$ (.088) & $-.028$ (.095) \\
+Data constraint $\beta_D$ & $+.012^{**}$ (.004) & $+.011^{*}$ (.004) & $-.333^{**}$ (.118) & $-.108$ (.126) \\
+Interaction $\beta_{MD}$ & $-.014^{**}$ (.004) & $-.014^{**}$ (.005) & $+.325^{*}$ (.126) & $+.171$ (.140) \\
+$\log_{10}$ parameters $\beta_S$ & $-.010^{***}$ (.001) & $-.005^{***}$ (.001) & $+.168^{***}$ (.041) & $+.052^{*}$ (.022) \\
+$\log_{10}$ perplexity $\beta_P$ & $-.005^{***}$ (.001) & $+.000$ (.001) & $-.309^{***}$ (.061) & $-.613^{***}$ (.025) \\
+\midrule
+Checkpoints added & 0 & 119 & 0 & 119 \\
+Rows (of which checkpoints) & 118 (0) & 237 (119) & 116 (0) & 235 (119) \\
+\bottomrule
+\end{tabular}
+\end{table}

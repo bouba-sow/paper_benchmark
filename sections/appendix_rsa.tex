@@ -1,0 +1,24 @@
+\section{Representational Evaluation: Details}
+\label{app:rsa}
+
+\subsection{Implementation of the RDM regression}
+\label{app:rsa-cv}
+
+All RDMs are stored as the upper triangle of the stimulus-by-stimulus matrix, one entry per pair. With every pair used, the regression of Equation~\ref{eq:rdmreg} is never run on the pair vector itself: every quantity it needs (the sums of $y^2$, $m^2$, $ym$, $c_k y$, $c_k m$ over the pairs of each fold block) is a weighted sum over an upper-triangular matrix and is computed as $F^\top W F$, with $F$ the stimulus-by-fold indicator matrix. Ordinary least squares is fitted from these training statistics, the noise variance is the maximum-likelihood estimate on the training pairs, and the Gaussian log-likelihood of the test pairs follows from the test statistics. This gives exactly the result of the pairwise computation (checked in the test suite) at a memory cost independent of the number of pairs. Folds follow the schedule of \citet{schutt2023statistical} (5 folds for 40 or more stimuli); about one fifth of the pairs are scored per partition, and the score is the mean over 10 partitions. The same folds and seed are used for every model, so all models are evaluated on identical test pairs.
+
+\paragraph{Whole-network embedding RDM.} The concatenation of all layers is never built. With every feature z-scored, the Gram matrix of the concatenation is the sum of the per-layer Gram matrices, accumulated layer by layer in double precision; the row sums provide the centering, and one minus the Pearson correlation follows. Layer~0 (the token embedding lookup) is excluded; a variant that includes it gives the same ordering of groups. For the single-layer CBR-RNN the whole network is its one layer.
+
+\paragraph{Multichannel RDMs.} Participants' channels (for Podcast, the language-region electrodes; for Pereira, the language-atlas voxels) are concatenated, so a participant contributes in proportion to their number of channels (relevant for Podcast, where electrode counts differ between patients). In MEG-MASC and Broderick, a word that a participant did not hear is set to the feature mean (0) in that participant's channels, and features observed for fewer than 100 words are dropped.
+
+\subsection{Noise ceilings}
+\label{app:rsa-ceilings}
+
+Both representational scores are expressed relative to the reliability of the human data, computed in the same RDM space, with the same stimulus folds, confound RDMs and likelihood as the models. Participants are split at random into two halves (15 splits); for multichannel datasets each half's RDM is built from that half's channels only, and for behavioral data from that half's item means.
+
+\paragraph{$\Delta\ell$ reference.} Half $A$'s RDM replaces the model RDM in Equation~\ref{eq:rdmreg} to predict half $B$'s RDM, and is compared with the same confound-only baseline on the same test pairs; the roles are swapped, the two totals are summed and divided by the total number of test pairs \citep{timkey2026dissociation}, and the reference is the mean over splits.
+
+\paragraph{RSA ceiling.} The split-half reliability $r_{\mathrm{half}}$ is the Pearson correlation between the two half-sample RDMs, averaged over splits and corrected to the full sample with the Spearman--Brown formula, $r_{\mathrm{SB}}=2r_{\mathrm{half}}/(1+r_{\mathrm{half}})$; the ceiling for a model--response correlation is $\sqrt{r_{\mathrm{SB}}}$.
+
+\paragraph{Why normalized brain similarity can exceed 1.} Since $\Delta\ell\approx\rho^2/2$ for a single predictor, the $\Delta\ell$ reference is close to $r_{\mathrm{half}}^2/2$ (Podcast: $r_{\mathrm{half}}=.100$, $.100^2/2=.0050$, reference $.0050$), and a model scores close to $r^2/2$ with $r$ its correlation with the full-sample RDM (best Podcast model: $r=.145$, $\Delta\ell=.0103$). The reference correlates two noisy half-sample RDMs, whereas a model, which has no measurement noise, is compared with the full-sample RDM, which is less noisy than either half. The normalized score is thus approximately $(r/r_{\mathrm{half}})^2$ and can exceed 1 although the model captures only part of the reliable signal: relative to the Spearman--Brown corrected RSA ceiling, the best Podcast model reaches $.145/.427=.34$. The RSA ceiling corrects for the half-sample size and is never exceeded; the $\Delta\ell$ reference does not, because no such correction exists on the likelihood scale. Dividing by the reference rescales each dataset by a constant, so model rankings within a dataset and the Pareto fronts of the two-dataset analysis are unaffected; it changes the relative weight of datasets in the medians and the scale of the ceiling-normalized coefficients.
+
+\input{sections/rdm_ceiling_table}

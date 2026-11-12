@@ -1,0 +1,35 @@
+{\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}p{5.2cm}ccp{2.8cm}@{}}
+\caption{Ridge regression configuration for the ridge encoder of each dataset (embedding track): log-spaced $\alpha$ grid (number of grid points in parentheses), outer cross-validation fold count, and the grouping unit used so that no fold splits correlated observations. GroupKFold groups on the listed unit unless marked LOSO (leave-one-unit-out, i.e. fold count equals unit count).}
+\label{tab:ridge-config} \\
+\toprule
+\textbf{Dataset} & \shortstack{\textbf{$\alpha$ grid}\\\textbf{(points)}} & \textbf{Folds} & \textbf{Grouping unit} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{c}{\tablename\ \thetable{} -- continued} \\
+\toprule
+\textbf{Dataset} & \shortstack{\textbf{$\alpha$ grid}\\\textbf{(points)}} & \textbf{Folds} & \textbf{Grouping unit} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+GECO (FP/GP) & $10^{1}$--$10^{10}$ (10) & 5 & screen \\
+MECO (FP/GP/SP) & $10^{0.5}$--$10^{10}$ (12) & 5 & passage \\
+Provo (FP/GP/SP) & $10^{0}$--$10^{10}$ (11) & 5 & text \\
+UCL Reading & $10^{1.5}$--$10^{9}$ (9) & 5 & sentence \\
+OneStop (FP/GP/SP) & $10^{0}$--$10^{10}$ (11) & 5 & passage \\
+Natural Stories SPR & $10^{-1}$--$10^{5}$ (7) & 10 (LOSO) & story \\
+Natural Stories fMRI & $10^{0}$--$10^{8}$ (15) & 8 (LOSO) & story \\
+ZuCo Reading (NR) & $10^{2.5}$--$10^{9}$ (8) & 5 & sentence \\
+ZuCo Reading (SR/TSR) & $10^{2}$--$10^{6}$ (8) & 5 & sentence \\
+Nieuwland & $10^{3.5}$--$10^{10}$ (6) & 10 & sentence item \\
+Federmeier et al.\ (2007), Hubbard et al.\ (2019) & $10^{1.5}$--$10^{5.25}$ (7) & 10 & sentence frame \\
+Tuckute & $10^{2}$--$10^{7}$ (5) & 4 & sentence \\
+Broderick & $10^{0}$--$10^{8}$ (15) & 3 & audiobook segment \\
+MEG-MASC & $10^{3.5}$--$10^{8}$ (5) & 4 (LOSO) & story \\
+Le Petit Prince & $10^{3}$--$10^{5.3}$ (8) & 9 (LOSO) & section \\
+Podcast & $10^{0}$--$10^{8}$ (15) & 3 & contiguous time chunk \\
+Fedorenko2016 & $10^{0}$--$10^{8}$ (15) & 5 & sentence \\
+Pereira & $10^{0}$--$10^{8}$ (15) & 5 & passage \\
+\end{longtable}
+}

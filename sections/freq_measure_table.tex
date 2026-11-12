@@ -1,0 +1,26 @@
+\begin{table}[h]
+\centering
+\caption{Frequency bins per reading measure. For each measure and bin, an OLS fit of Equation~\ref{eq:group} over the 118 models
+(HC3 standard errors), outcome = score divided by the all-pairs reference; the C-BabyLM column is the contrast
+$\beta_M+\beta_D+\beta_{MD}$ (Constrained-BabyLM vs.\ Standard LLM at matched size and perplexity). Median and spread (robust SD,
+IQR$/1.349$) of the model scores are given as frequent--frequent / any-rare. Within a measure, the robust-$z$ coefficient is the
+coefficient divided by the spread, with the same $p$. $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\label{tab:freq-measures}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lrcccc@{}}
+\toprule
+Measure & Rare words & Median & Spread & C-BabyLM, frequent--frequent & C-BabyLM, any-rare \\
+\midrule
+GECO first pass & 1,010 & 0.13 / 1.14 & 0.027 / 2.423 & $+0.045^{**}$ (0.015) & $+0.602$ (0.374) \\
+GECO go-past & 1,010 & 0.00 / 0.16 & 0.032 / 1.096 & $+0.001$ (0.009) & $+0.532^{*}$ (0.208) \\
+OneStop first pass & 1,043 & 0.33 / 3.08 & 0.177 / 2.060 & $+0.178^{***}$ (0.037) & $+0.734^{*}$ (0.355) \\
+OneStop go-past & 1,044 & 0.00 / 0.24 & 0.024 / 0.285 & $+0.016^{***}$ (0.004) & $+0.160^{***}$ (0.031) \\
+OneStop scan path & 1,043 & 0.33 / 1.26 & 0.041 / 0.595 & $+0.048$ (0.030) & $-0.543^{*}$ (0.268) \\
+Natural Stories SPR & 275 & 0.01 / 0.11 & 0.011 / 0.096 & $+0.009^{***}$ (0.002) & $+0.011$ (0.029) \\
+ZuCo normal reading & 328 & 0.24 / 1.99 & 0.070 / 0.323 & $+0.032$ (0.017) & $-0.079$ (0.123) \\
+ZuCo sentiment & 360 & 0.34 / 0.73 & 0.052 / 0.189 & $+0.011$ (0.013) & $-0.124^{**}$ (0.041) \\
+ZuCo relation & 345 & 0.44 / 1.41 & 0.133 / 0.310 & $-0.013$ (0.027) & $-0.200$ (0.113) \\
+\bottomrule
+\end{tabular}}
+\end{table}

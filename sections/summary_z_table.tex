@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Robustness check of the all-datasets rows of Table~\ref{tab:summary}: the same fits with each outcome replaced by
+its robust $z$ score, $(x-\mathrm{median})/(\mathrm{IQR}/1.349)$ over models, computed within each dataset unit, so that no noise
+reference is involved and each unit has the same spread of model scores. Coefficient (SE); reference: Standard LLM of the same size and perplexity. $^{*}p<.05$, $^{**}p<.01$, $^{***}p<.001$.}
+\label{tab:summary-z}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+ & Memory $\beta_M$ & Data $\beta_D$ & $M\times D$ $\beta_{MD}$ & $\log_{10}$ params $\beta_S$ & $\log_{10}$ PPL $\beta_P$ & C-BabyLM vs.\ LLM \\
+\midrule
+\multicolumn{7}{@{}l}{\textit{All datasets \quad (16 reading measures; 8 neural datasets)}} \\
+\quad Behavior & $+.293^{*}$ (.126) & $+.480^{*}$ (.178) & $-.480^{*}$ (.189) & $-.447^{***}$ (.043) & $-.275^{***}$ (.042) & $+.294^{*}$ (.136) \\
+\quad Brain & $-.459^{*}$ (.220) & $-.305$ (.289) & $+.285$ (.318) & $+.426^{***}$ (.096) & $-.008$ (.110) & $-.479$ (.243) \\
+\bottomrule
+\end{tabular}}
+\end{table}
