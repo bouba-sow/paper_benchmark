@@ -1,4 +1,4 @@
-\begin{thebibliography}{86}
+\begin{thebibliography}{87}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -369,6 +369,14 @@ Benjamin Lipkin, Greta Tuckute, et~al.
 \newblock Probabilistic atlas for the language network based on precision
   {fMRI} data from >800 individuals.
 \newblock \emph{Scientific Data}, 9:\penalty0 529, 2022.
+
+\bibitem[Lipkin et~al.(2023)Lipkin, Blank, and Fedorenko]{lipkin2023mdtom}
+Benjamin Lipkin, Idan Blank, and Evelina Fedorenko.
+\newblock Lipkin et al. (2022) online supplement: Probabilistic atlases for the
+  multiple demand ({MD}) and theory of mind ({ToM}) networks based on
+  large-scale precision localizers.
+\newblock figshare, \url{https://doi.org/10.6084/m9.figshare.22306348.v2},
+  2023.
 
 \bibitem[Luke \& Christianson(2018)Luke and Christianson]{luke2018provo}
 Steven~G. Luke and Kiel Christianson.
