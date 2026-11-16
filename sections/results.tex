@@ -34,8 +34,6 @@ Reading times carry most of their model-explainable signal on pairs with a rare 
 
 This advantage is defined in units of the human reference, i.e.\ as a share of the reliable reading-time signal. It is not uniform across measures: on rare pairs it comes from GECO and from OneStop first-pass and go-past times, where model scores spread most, and it is reversed in OneStop scan-path time and in ZuCo (Table~\ref{tab:freq-measures}).
 
-\paragraph{Why rare words?} A model trained on less text has seen a rare word only a few times, as a reader has, and a model that uses less context may lean more on the word itself. We test this on the surprisal the models assign to the words of the 9 measures (Appendix~\ref{app:rare-surprisal}). The result is inconclusive. Models that find rare words much more surprising than frequent ones score higher on rare pairs in the measures that carry the advantage (correlation over models .66 to .95 in GECO and OneStop first-pass and go-past times; it is $-.83$ to $.57$ in the other measures), and adding this rare $-$ frequent surprisal gap to the regression removes the constraint advantage on rare pairs (Constrained-BabyLM $+.376$ to $+.054$). But whether the constraints themselves widen the gap at matched size and perplexity depends on the random-effect structure: with a lineage intercept they do not (Constrained-BabyLM $+.48$ nats, $p=.22$); with an additional model intercept, which these data support, they do ($+2.95$ nats, $p<.001$). The gap is also strongly tied to perplexity, so the two are hard to separate. How much a model's surprisal depends on the word's own frequency and length does not predict its rare-pair score.
-
 \subsection{No advantage on the multiple-demand network}
 \label{sec:results-md}
 
